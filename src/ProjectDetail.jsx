@@ -119,7 +119,7 @@ export default function ProjectDetail() {
                 className="w-1.5 h-1.5 rounded-full bg-white"
               />
             </div>
-            <h1 className="text-6xl md:text-9xl font-black uppercase tracking-tighter leading-[0.8] mb-4">
+            <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter leading-[0.8] mb-4">
               {project.title}
             </h1>
             <p className="text-white/40 font-mono text-[11px] uppercase tracking-[0.4em] flex items-center gap-3">
@@ -155,7 +155,7 @@ export default function ProjectDetail() {
           {/* ── CARD 1: DESCRIPTION (THE MANIFEST) ── */}
           <motion.section
             variants={cardVariants}
-            className="lg:col-span-8 group relative overflow-hidden bg-zinc-900/40 backdrop-blur-xl border border-white/5 rounded-[3.5rem] p-8 md:p-14"
+            className="lg:col-span-8 group relative overflow-hidden bg-zinc-900/40 backdrop-blur-xl border border-white/5 rounded-3xl md:rounded-[3.5rem] p-6 md:p-14"
           >
             <div className="absolute top-0 right-0 p-12 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity rotate-12">
               <Icon className="w-80 h-80 text-white" />
@@ -170,20 +170,20 @@ export default function ProjectDetail() {
                   <span className="text-[10px] font-mono uppercase tracking-[0.4em] text-white/40">Operation_Log // Overview</span>
                 </div>
 
-                <div className="grid md:grid-cols-12 gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
                   <div className="md:col-span-7 space-y-8">
-                    <p className="text-2xl md:text-4xl font-bold tracking-tight leading-tight">
+                    <p className="text-xl sm:text-2xl md:text-4xl font-bold tracking-tight leading-tight">
                       {project.description}
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {project.tags.map(tag => (
-                        <span key={tag} className="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-[9px] font-mono uppercase tracking-widest text-white/60 hover:bg-white hover:text-black transition-all cursor-default">
+                        <span key={tag} className="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-[9px] font-mono tracking-widest text-white/60 hover:bg-white hover:text-black transition-all cursor-default">
                           {tag}
                         </span>
                       ))}
                     </div>
                   </div>
-                  <div className="md:col-span-5 prose prose-invert prose-sm text-white/40 leading-relaxed font-light border-l border-white/5 pl-8 italic">
+                  <div className="md:col-span-5 prose prose-invert prose-sm text-white/40 leading-relaxed font-light border-t md:border-t-0 md:border-l border-white/5 pt-8 md:pt-0 md:pl-8 italic">
                     {project.fullDescription}
                   </div>
                 </div>
@@ -208,7 +208,7 @@ export default function ProjectDetail() {
           {/* ── CARD 2: TECHNICAL SPECS ── */}
           <motion.section
             variants={cardVariants}
-            className="lg:col-span-4 bg-[#0a0a0a] border border-white/5 rounded-[3.5rem] p-8 md:p-12 flex flex-col justify-between group overflow-hidden relative"
+            className="lg:col-span-4 bg-[#0a0a0a] border border-white/5 rounded-3xl md:rounded-[3.5rem] p-6 md:p-12 flex flex-col justify-between group overflow-hidden relative"
           >
             <div className="absolute -bottom-10 -right-10 opacity-5 group-hover:opacity-10 transition-opacity rotate-12">
               <Terminal className="w-64 h-64" />
@@ -272,7 +272,7 @@ export default function ProjectDetail() {
           {project.gallery && project.gallery.length > 0 && (
             <motion.section
               variants={cardVariants}
-              className="lg:col-span-12 bg-zinc-900/40 backdrop-blur-xl border border-white/5 rounded-[4rem] p-10 md:p-16 space-y-10 overflow-hidden relative"
+              className="lg:col-span-12 bg-zinc-900/40 backdrop-blur-xl border border-white/5 rounded-3xl md:rounded-[4rem] p-6 md:p-16 space-y-10 overflow-hidden relative"
             >
               <div className="flex flex-col md:flex-row justify-between items-end gap-6 relative z-10">
                 <div className="space-y-4">
@@ -319,7 +319,7 @@ export default function ProjectDetail() {
           {project.id === 'sae-baja' && (
             <motion.section
               variants={cardVariants}
-              className="lg:col-span-12 bg-zinc-900/40 backdrop-blur-xl border border-white/5 rounded-[4rem] p-10 md:p-16 space-y-12 overflow-hidden relative"
+              className="lg:col-span-12 bg-zinc-900/40 backdrop-blur-xl border border-white/5 rounded-3xl md:rounded-[4rem] p-6 md:p-16 space-y-12 overflow-hidden relative"
             >
               <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
 

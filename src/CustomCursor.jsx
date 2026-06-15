@@ -1,8 +1,22 @@
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useCursor } from './CursorContext';
 
 export default function CustomCursor() {
   const { springCX, springCY } = useCursor();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      const isCoarse = window.matchMedia('(pointer: coarse)').matches;
+      setIsMobile(isCoarse || window.innerWidth < 1024);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  if (isMobile) return null;
 
   return (
     <motion.div

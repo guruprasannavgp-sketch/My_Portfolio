@@ -12,8 +12,10 @@ body {
   text-underline-offset: 4px;
 }
 
-html, body, a, button, [role="button"], * {
-  cursor: none !important;
+@media (hover: hover) and (pointer: fine) {
+  html, body, a, button, [role="button"], * {
+    cursor: none !important;
+  }
 }
 
 body::selection {
@@ -49,6 +51,14 @@ body::selection {
 ::-webkit-scrollbar-track  { background-color: #000; }
 ::-webkit-scrollbar-thumb  { background-color: #27272a; border-radius: 9999px; }
 ::-webkit-scrollbar-thumb:hover { background-color: #52525b; }
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 
 /* ──────────────────────────────────────────────
    EDITORIAL TYPOGRAPHY
